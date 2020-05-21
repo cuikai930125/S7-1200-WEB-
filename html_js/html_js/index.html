@@ -1,0 +1,322 @@
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<!-- <meta http-equiv="refresh" content="5; URL=index.html"> -->
+	<title>基于CSS框架的S7-1200Web页面制作</title>
+	<link href="src/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+	<link href="src/css/style.css" rel="stylesheet">
+	<script type="text/javascript" src="src/js/jquery-2.0.2.min.js"></script>
+
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<br>
+				<p class="h1">
+					S7-1200 Demo Web Server  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/Portal/Portal.mwsl?PriNav=Start">返回PLC主页</a>
+				</p>
+				<br>
+				<p class="h4 text-muted">
+					基于S7-1200的测试程序
+				</p>
+				<br>
+				<ul class="nav nav-pills">
+					<li class="nav-item">
+						<button type="button" class="btn btn-primary">
+							温度 <span class="badge badge-light" id="Temperature">0</span>
+						</button>
+					</li>
+					<li class="nav-item">
+						<button type="button" class="btn btn-link">
+							湿度 <span class="badge badge-primary" id="Humidity">0</span>
+						</button>
+					</li>
+					<li class="nav-item">
+						<button type="button" class="btn btn-link">
+							大气压力 <span class="badge badge-primary" id="Pressure">0</span>
+						</button>
+					</li>
+				</ul>
+				<br>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>
+								Device Name
+							</th>
+							<th>
+								Measure
+							</th>
+							<th>
+								Value
+							</th>
+							<th>
+								Note
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								温度传感器
+							</td>
+							<td>
+								环境温度值
+							</td>
+							<td id="Temperature_t">
+								0
+							</td>
+							<td>
+								-
+							</td>
+						</tr>
+						<tr>
+							<td>
+								湿度传感器
+							</td>
+							<td>
+								环境湿度值
+							</td>
+							<td id="Humidity_t">
+								0
+							</td>
+							<td>
+								-
+							</td>
+						</tr>
+						<tr>
+							<td>
+								压力传感器
+							</td>
+							<td>
+								大气压力
+							</td>
+							<td id="Pressure_t">
+								0
+							</td>
+							<td>
+								-
+							</td>
+						</tr>
+						<tr>
+							<td>
+								测试设备
+							</td>
+							<td>
+								设定值
+							</td>
+							<td id="tag1">
+								0
+							</td>
+							<td>
+								<div align=right><input class="form-control" type="text" placeholder="输入整数值"
+										id="setValue">
+									<button class="btn btn-primary btn-sm" id="setWrite">按下写入</button></div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<br>
+				<p class="h4 text-muted">
+					输出控制
+				</p>
+				<br>
+				<div class="row">
+					<div class="col-md-4">
+						<blockquote class="blockquote">
+							<p class="mb-0"><strong>温度传感器 <img id="Lamp1" src='image/Lamp00.png' alt=""></strong></p>
+						</blockquote>
+
+					</div>
+					<div class="col-md-4">
+
+						<!-- <button type="button" class="btn btn-success">
+							ON
+						</button> -->
+						<button class="btn btn btn-success" id="device1ON">ON</button>
+					</div>
+					<div class="col-md-4">
+
+						<!-- <button type="button" class="btn btn-danger">
+							OFF
+						</button> -->
+						<button class="btn btn btn-danger" id="device1OFF">OFF</button>
+					</div>
+				</div>
+				<br>
+
+				<div class="row">
+					<div class="col-md-4">
+						<blockquote class="blockquote">
+							<p class="mb-0"><strong>湿度传感器 <img id="Lamp2" src='image/Lamp00.png' alt=""></strong></p>
+						</blockquote>
+					</div>
+					<div class="col-md-4">
+
+						<!-- <button type="button" class="btn btn-success">
+							ON
+						</button> -->
+						<!-- <form method="POST" action="">
+							<input type="submit" value="ON" class="btn btn-success">
+							<input type="hidden" name='"Bootstrap_DB".Device2' value="1">
+						</form> -->
+						<button class="btn btn btn-success" id="device2ON">ON</button>
+					</div>
+					<div class="col-md-4">
+
+						<!-- <button type="button" class="btn btn-danger">
+							OFF
+						</button> -->
+						<button class="btn btn btn-danger" id="device2OFF">OFF</button>
+					</div>
+				</div>
+				<br>
+				<div class="row">
+					<div class="col-md-4">
+						<blockquote class="blockquote">
+							<p class="mb-0"><strong>压力传感器 <img id="Lamp3" src='image/Lamp00.png' alt=""></strong></p>
+						</blockquote>
+					</div>
+					<div class="col-md-4">
+
+						<!-- <button type="button" class="btn btn-success">
+							ON
+						</button> -->
+						<button class="btn btn btn-success" id="device3ON">ON</button>
+					</div>
+					<div class="col-md-4">
+
+						<!-- <button type="button" class="btn btn-danger">
+							OFF
+						</button> -->
+						<button class="btn btn btn-danger" id="device3OFF">OFF</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- <script src="src/js/jquery.min.js"></script>
+	<script src="src/js/bootstrap.min.js"></script>
+	<script src="src/js/scripts.js"></script> -->
+</body>
+<script type="text/javascript">
+	$(document).ready(function () {
+		$.ajaxSetup({
+			cache: false
+		});
+		setInterval(function () {
+			$.getJSON("IO_Output.html", function (data) {
+				$('#Temperature').text(data
+					.Temperature);
+				$('#Humidity').text(data
+					.Humidity);
+				$('#Pressure').text(data
+					.Pressure);
+				$('#Temperature_t').text(data
+					.Temperature);
+				$('#Humidity_t').text(data
+					.Humidity);
+				$('#Pressure_t').text(data
+					.Pressure);
+					$('#tag1').text(data
+					.Tag1);	
+
+
+				if (data.Device1 == true) {
+					$("#Lamp1").attr("src",
+						'image/Lamp01.png'
+					)
+				}
+				if (data.Device1 == false) {
+					$("#Lamp1").attr("src",
+						'image/Lamp00.png'
+					)
+				}
+				if (data.Device2 == true) {
+					$("#Lamp2").attr("src",
+						'image/Lamp01.png'
+					)
+				}
+				if (data.Device2 == false) {
+					$("#Lamp2").attr("src",
+						'image/Lamp00.png'
+					)
+				}
+				if (data.Device3 == true) {
+					$("#Lamp3").attr("src",
+						'image/Lamp01.png'
+					)
+				}
+				if (data.Device3 == false) {
+					$("#Lamp3").attr("src",
+						'image/Lamp00.png'
+					)
+				}
+			});
+		}, 1000);
+
+		$("#device1ON").click(function () {
+			url = "IO_Input.html";
+			name = '"Bootstrap_DB".Device1';
+			val = 1;
+			sdata = escape(name) + '=' + val;
+			$.post(url, sdata, function (result) {});
+		});
+		$("#device1OFF").click(function () {
+			url = "IO_Input.html";
+			name = '"Bootstrap_DB".Device1';
+			val = 0;
+			sdata = escape(name) + '=' + val;
+			$.post(url, sdata, function (result) {});
+		});
+		$("#device2ON").click(function () {
+			url = "IO_Input.html";
+			name = '"Bootstrap_DB".Device2';
+			val = 1;
+			sdata = escape(name) + '=' + val;
+			$.post(url, sdata, function (result) {});
+		});
+		$("#device2OFF").click(function () {
+			url = "IO_Input.html";
+			name = '"Bootstrap_DB".Device2';
+			val = 0;
+			sdata = escape(name) + '=' + val;
+			$.post(url, sdata, function (result) {});
+		});
+		$("#device3ON").click(function () {
+			url = "IO_Input.html";
+			name = '"Bootstrap_DB".Device3';
+			val = 1;
+			sdata = escape(name) + '=' + val;
+			$.post(url, sdata, function (result) {});
+		});
+		$("#device3OFF").click(function () {
+			url = "IO_Input.html";
+			name = '"Bootstrap_DB".Device3';
+			val = 0;
+			sdata = escape(name) + '=' + val;
+			$.post(url, sdata, function (result) {});
+		});
+
+		$("#setWrite").click(function () {
+			url = "IO_Input.html";
+			name = '"Bootstrap_DB".Tag1';
+			val = $('input[id=setValue]').val();
+			sdata = escape(name) + '=' + val;
+			$.post(url, sdata, function (result) {});
+		});
+
+	});
+</script>
+
+</html>

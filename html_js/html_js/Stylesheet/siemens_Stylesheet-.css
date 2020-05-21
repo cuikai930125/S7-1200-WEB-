@@ -1,0 +1,364 @@
+body {
+	font-family : Arial, Helvetica, sans-serif;
+	margin : 0px;
+ 	text-align : left;
+	text-decoration : none;
+	color : #000000;
+	overflow : auto;
+}
+
+#header {
+	POSITION: absolute;
+	width: 980px;
+	height: 110px;
+	left: 60px;
+	top: 20px;
+	background-color: rgb(255,255,255);
+	z-index: 2;
+}
+
+#header h2{
+	padding-top: 20px;	
+	padding-bottom: 0px;
+	padding-left: 10px;
+	font-size: 20px;
+}
+
+#username {
+	position:absolute;
+	top: 3px;
+	left: 3px;
+	width:92px;
+}
+
+#password {
+	position:absolute;
+	top: 30px;
+	left: 3px;
+	width:92px;
+}
+
+#loginButton{
+	position: absolute;
+	top: 30px;
+	left: 98px;
+}
+
+#navi {
+	POSITION: absolute;
+	left: 0;
+	top: 0;
+	width: 186px;
+	height: 750px;
+	padding-top: 180px;
+	padding-left: 0px;
+	text-align: left;
+	border-color: white;
+	border-style: solid;
+	border-width: 1px;
+	background-color: rgb(148,158,170);
+	border-collapse : separate;
+	z-index: 1;
+}
+
+#navi ul {
+	list-style-type: none;
+	color: rgb(51,102,170);
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 2;
+}
+
+#navi ul a {
+	list-style-type: none;
+	color: rgb(0,51,153);
+	font-size: 12px;
+	font-weight: bold;
+}
+
+#page {
+	POSITION: absolute;
+	left: 186px;
+	top: 0;
+	height: 750px;
+	width: 920px;
+	padding-top: 180px;
+	padding-left: 30px;
+	padding-right: 30px;
+	text-align: left;
+	border-color: white;
+	border-style: solid;
+	border-width: 1px;
+	background-color: rgb(208,211,218);
+	border-collapse : separate;
+	z-index: 1;
+}
+
+#page h3{
+	 color: rgb(0,51,153);
+}
+
+#page2 {
+	POSITION: absolute;
+	left: 650px;
+	top: 0;
+	padding-top: 180px;
+	background-color: rgb(208,211,218);
+	border-collapse : separate;
+	z-index: 1;
+}
+
+#page2 h3{
+	 color: rgb(0,51,153);
+}
+
+td.static_field_small
+{
+	font-size : 12px;
+	text-align : center;
+	width : 50px;
+	height : 21px;
+}
+
+td.static_field
+{
+	font-size : 12px;
+	font-weight : bold;
+	padding-right: 5px;
+	text-align : right;
+	width : 150px;
+	height : 21px;
+}
+
+td.output_field
+{
+	font-size : 16px;
+	background-color : rgb(231, 231, 231);
+	text-align : left;
+	padding-left: 15px;
+	width : 700px;
+	height : 30px;
+}
+
+td.output_field_long
+{
+	font-size : 12px;
+	background-color : rgb(221,221,221);
+	text-align : center;
+	width : 300px;
+	height : 21px;
+	empty-cells : show;
+}
+
+td.static_field_headline_small
+{
+	font-size : 12px;
+	font-weight : bold;
+	text-align : center;
+	width : 50px;
+	height : 21px;
+	padding-top : 24px;
+}
+
+td.static_field_headline
+{
+	font-size : 16px;
+	font-weight : bold;
+	text-align : right;
+	width : 150px;
+	height : 21px;
+	padding-top : 24px;
+}
+
+td.static_field_headline_left
+{
+	font-size : 16px;
+	font-weight : bold;
+	text-align : center;
+	width : 150px;
+	height : 21px;
+	padding-top : 24px;
+}
+
+td.static_field_button
+{
+	font-size : 12px;
+	font-weight : bold;
+	text-align : left;
+	vertical-align : top;
+	width : 150px;
+	height : 50px;
+}
+
+
+/******** login area (box) begins  ***************/
+ .Login_Area
+ {
+  position          : relative;
+  font-size         : 10px;
+  width             : 186px;
+  min-width         : 186px;    /* css 2.0 */
+  height            : 60px;
+  background-color  : #AFB4BE;
+  margin            : 0px;
+  border-bottom     : 1px solid #FFFFFF;
+ }
+
+ #Login_Area_Form       /*used in Portal/Formlogin.mwsl*/
+ {
+  margin          : 0px;
+  padding         : 0px;
+ }
+
+
+ #Login_Area_Input_Name
+ {
+  position       : absolute;
+  top            : 11px;
+  left           : 12px;
+  font-size      : 10px;
+  height         : 18px;
+  width          : 110px;
+  border         : 0px solid #000000; /*neccesary for Opera; otherwise there will be frames around the buttons*/
+ }
+
+ #Login_Area_Input_Password
+ {
+  position       : absolute;
+  top            : 35px;
+  left           : 12px;
+  font-size      : 10px;
+  height         : 18px;
+  width          : 110px;
+  border         : 0px solid #000000; /*neccesary for Opera; otherwise there will be frames around the buttons*/
+ }
+
+ #Login_Area_Button
+ {
+  position        : absolute;
+  top             : 36px;
+  right           : 12px;
+  border          : 0px solid #000000; /*neccesary for Opera; otherwise there will be frames around the buttons*/
+  text-decoration : underline;
+  font-size       : 10px;
+  background-color  : #AFB4BE;
+  white-space:nowrap;
+ }
+
+ #login_box_table
+ {
+  width:100%;
+  height:100%;
+  border-collapse:collapse;
+  border:0px solid #000000;
+  margin:0px;
+ }
+
+ .Login_Table_Cell_Input_Name
+ {
+  font-size      : 10px;
+  padding        : 0px;
+  padding-right  : 6px;
+  height         : 18px;
+  width          : 100%;
+  border         : 0px solid #000000; /*neccesary for Opera; otherwise there will be frames around the buttons*/
+ }
+
+ .Login_Table_Cell_Input_Password
+ {
+  font-size      : 10px;
+  height         : 18px;
+  width          : 100%;
+  padding-top    : 6px;
+  padding-right  : 6px;
+  padding-bottom : 0px;
+  padding-left   : 0px;
+  border         : 0px solid #000000; /*neccesary for Opera; otherwise there will be frames around the buttons*/
+ }
+
+ input.Login_Input
+ {
+  margin          : 0px;
+  padding         : 0px;
+  padding-left    : 2px;
+  border          : 0px solid #000000; /*neccesary for Opera; otherwise there will be frames around the buttons*/
+  font-size       : 10px;
+  height          : 18px;
+  max-width		  : 120px;
+ }
+
+
+ .Login_Botton_Cell
+ {
+   padding         : 0px;
+   padding-top     : 6px;
+   padding-bottom  : 3px;
+   margin          : 0px;
+   white-space:nowrap;
+    
+ }
+
+ .Login_Button
+ {
+  border          : 0px solid #000000; /*neccesary for Opera; otherwise there will be frames around the buttons*/
+  text-decoration : underline;
+  font-size       : 12px;
+  background-color  : #AFB4BE;
+  white-space:nowrap;
+ }
+
+
+/******** login area (box) ends ***************/
+/******** logout form begins  ***************/
+
+ .Logout_Area
+ {
+  position          : relative;
+  font-size         : 10px;
+  width             : 186px;
+  min-width         : 186px;    /* css 2.0 */
+  height            : 60px;
+  background-color  : #AFB4BE;
+  margin            : 0px;
+  border-bottom     : 1px solid #FFFFFF;
+  border-collapse: collapse; 
+ }
+
+ #Logout_Area_Form       /*used in Portal/Formlogin.mwsl*/
+ {
+  margin          : 0px;
+  padding         : 0px;
+ }
+
+ #logout_user_name
+ {  
+  position       : absolute;
+  top            : 12px;
+  left           : 12px;
+  font-size      : 12px;
+ }
+ 
+#logout_area_logout_button
+{
+  position        : absolute;
+  top             : 36px;
+  right           : 12px;
+  border          : 0px solid #000000; /*neccesary for Opera; otherwise there will be frames around the buttons*/
+  text-decoration : underline;
+  height          : 12px;
+  font-size       : 10px;
+  background-color  : #AFB4BE;
+  white-space:nowrap;
+}
+
+ .Logout_Button
+ {
+  border          : 0px solid #000000; /*neccesary for Opera; otherwise there will be frames around the buttons*/
+  text-decoration : underline;
+  background-color  : #AFB4BE;
+  white-space:nowrap;
+  font-size       : 12px;
+  height          : 20px;
+ }
+
+ /******** logout form end  ***************/
